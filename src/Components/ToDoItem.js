@@ -4,7 +4,7 @@ class ToDoItem extends Component {
     render(){
         return (
             <div className="todo-item">
-                <input type="checkbox" checked={this.props.todoItem.completed} />
+                <input type="checkbox" defaultChecked={this.props.todoItem.completed} onChange={()=> !this.props.todoItem.completed } />
                 <p>{this.props.todoItem.text}</p>
             </div>
         );
