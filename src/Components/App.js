@@ -1,16 +1,25 @@
-//import react from 'react';
+import react, {Component} from 'react';
 import ToDoItem from './ToDoItem';
 import ToDoData from './tododata';
 
 
-function App() {
-    const todoDataItemComponents= ToDoData.map(todoItem=> <ToDoItem key={ToDoItem.id} todoItem={todoItem} />)
+class App extends Component {
 
-  return (
-    <div className="todo-list">
-     {todoDataItemComponents}
-    </div>
-  );
+  constructor(){
+    super();
+    this.state={
+      toDos: ToDoData
+    }
+  }
+  render(){
+    const todoDataItemComponents= this.state.toDos.map(todoItem=> <ToDoItem key={ToDoItem.id} todoItem={todoItem} />)
+
+    return (
+      <div className="todo-list">
+       {todoDataItemComponents}
+      </div>
+    );
+  };   
 }
 
 export default App;
