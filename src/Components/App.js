@@ -24,7 +24,6 @@ class App extends Component {
         }
         return todo;
       });
-
       return { toDos: updatedToDos };
     });
 
